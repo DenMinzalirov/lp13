@@ -68,6 +68,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
       console.log(`Результат спина: ${WIN_LABEL}`);
 
+      const winModal = document.getElementById("win-modal");
+      const winCta = document.getElementById("win-banner-cta");
+      const winBackdrop = document.getElementById("win-modal-backdrop");
+      const wheelLayer = document.querySelector(".wheel-layer");
+      const scratchSection = document.getElementById("scratch-section");
+
+      // Показываем модалку выигрыша с затемнённым фоном
+      if (winModal) {
+        winModal.classList.add("is-open");
+        winModal.setAttribute("aria-hidden", "false");
+      }
+
+      const hideModal = () => {
+        if (winModal) {
+          winModal.classList.remove("is-open");
+          winModal.setAttribute("aria-hidden", "true");
+        }
+      };
+
+      const handleBackdropClick = () => {
+        // hideModal();
+      };
+
+      const handleCtaClick = () => {
+        hideModal();
+        if (wheelLayer) {
+          wheelLayer.classList.add("hidden");
+        }
+        if (scratchSection) {
+          scratchSection.classList.remove("hidden");
+          scratchSection.setAttribute("aria-hidden", "false");
+        }
+      };
+
+      if (winBackdrop) {
+        winBackdrop.addEventListener("click", handleBackdropClick, {
+          once: true,
+        });
+      }
+      if (winCta) {
+        winCta.addEventListener("click", handleCtaClick, { once: true });
+      }
+
       isSpinning = false;
       spinButton.disabled = false;
     };
@@ -76,5 +119,25 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   spinButton.addEventListener("click", spinToWin);
+
+  // Анимация в месте карты: по клику карта заменяется на видео, проигрывается 1 раз
+  document.querySelectorAll(".scratch-card-wrap").forEach((wrap) => {
+    const card = wrap.querySelector(".scratch-card");
+    const video = wrap.querySelector(".scratch-card-video");
+    if (!card || !video) return;
+
+    card.addEventListener("click", () => {
+      card.classList.add("is-revealed");
+      card.disabled = true;
+      video.classList.add("is-playing");
+      video.currentTime = 0;
+      video.play();
+    });
+
+    video.addEventListener("ended", () => {
+      video.pause();
+      video.classList.add("is-playing"); // остаёмся видимым (последний кадр)
+    });
+  });
 });
 

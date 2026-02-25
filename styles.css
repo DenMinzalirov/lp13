@@ -226,6 +226,259 @@ button {
   box-shadow: none;
 }
 
+.hidden {
+  display: none !important;
+}
+
+/* Модалка выигрыша поверх всего экрана */
+.win-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.win-modal.is-open {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+.win-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.win-modal-inner {
+  position: relative;
+  width: 100%;
+  max-width: 841px;
+  padding: 0 16px;
+}
+
+.win-svg-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.win-svg-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.win-svg-wrap .win-banner-cta {
+  position: absolute;
+  left: 50%;
+  bottom: 19%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 480px) {
+  .win-svg-wrap .win-banner-cta {
+    width: 210px;
+    min-width: 210px;
+    height: 42px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+.win-banner-card {
+  position: relative;
+  margin: 0 auto;
+  padding: 40px 32px 36px;
+  border-radius: 32px;
+  box-shadow: 0 0 56px rgba(10, 10, 10, 0.72);
+  border: 3px solid #f4d27a;
+  background: radial-gradient(
+    124.05% 81.77% at 49.17% 38.29%,
+    rgba(13, 13, 13, 0.7) 0%,
+    rgba(13, 13, 13, 0.9) 40.57%,
+    #0d0d0d 100%
+  );
+  overflow: hidden;
+}
+
+.win-banner-card::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 20px;
+  background: radial-gradient(circle at top, #451010, #220707 60%, #050101 100%);
+  opacity: 0.96;
+}
+
+.win-banner-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+}
+
+.win-banner-subtitle {
+  margin: 0;
+  font-size: clamp(18px, 2.2vw, 26px);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #f4d27a;
+}
+
+.win-banner-title {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffd65c;
+}
+
+.win-banner-cta {
+  margin-top: 4px;
+  padding: 14px 40px;
+  min-width: 368px;
+  height: 80px;
+  border-radius: 10px;
+  border: none;
+  background: #04aa1a;
+  box-shadow: 0 0 32px rgba(11, 217, 39, 0.55);
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.win-banner-cta:hover {
+  background: #05b71d;
+  box-shadow: 0 0 40px rgba(11, 217, 39, 0.7);
+}
+
+.scratch-section {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.scratch-title-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.scratch-title-plate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 841px;
+  height: 180px;
+  padding: 0 24px;
+  border-radius: 20px;
+  border: 2px solid #f4d27a;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.9)
+    ),
+    radial-gradient(circle at top, rgba(0, 0, 0, 0.4), transparent 60%);
+}
+
+.scratch-title-text {
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 800;
+  font-size: 70px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #ffd65c;
+}
+
+@media (max-width: 480px) {
+  .scratch-title-plate {
+    width: 288px;
+    height: 58px;
+    padding: 0 12px;
+  }
+
+  .scratch-title-text {
+    font-size: 23px;
+  }
+}
+
+.scratch-grid {
+  width: 100%;
+  max-width: 860px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.scratch-card-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 380 / 250;
+}
+
+.scratch-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  border: none;
+  background-image: url("assets/Card.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.scratch-card.is-revealed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scratch-card-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scratch-card-video.is-playing {
+  z-index: 2;
+  opacity: 1;
+}
+
 .hero-video-overlay {
   position: absolute;
   inset: 0;

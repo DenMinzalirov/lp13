@@ -36,7 +36,77 @@
       </div>
       <button class="spin-button" id="spin-button">FREE SPINS</button>
     </div>
+    <div
+      class="scratch-section hidden"
+      id="scratch-section"
+      aria-hidden="true"
+    >
+      <div class="scratch-title-wrap">
+        <div class="scratch-title-plate">
+          <span class="scratch-title-text">SCRATCH CARDS</span>
+        </div>
+      </div>
+      <div class="scratch-grid">
+        <div class="scratch-card-wrap">
+          <button class="scratch-card" type="button"></button>
+          <video
+            class="scratch-card-video"
+            src="assets/animation-1772026449359.gif.mp4"
+            playsinline
+            muted
+            preload="auto"
+          ></video>
+        </div>
+        <div class="scratch-card-wrap">
+          <button class="scratch-card" type="button"></button>
+          <video
+            class="scratch-card-video"
+            src="assets/animation-1772026449359.gif.mp4"
+            playsinline
+            muted
+            preload="auto"
+          ></video>
+        </div>
+        <div class="scratch-card-wrap">
+          <button class="scratch-card" type="button"></button>
+          <video
+            class="scratch-card-video"
+            src="assets/animation-1772026449359.gif.mp4"
+            playsinline
+            muted
+            preload="auto"
+          ></video>
+        </div>
+        <div class="scratch-card-wrap">
+          <button class="scratch-card" type="button"></button>
+          <video
+            class="scratch-card-video"
+            src="assets/animation-1772026449359.gif.mp4"
+            playsinline
+            muted
+            preload="auto"
+          ></video>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <!-- Модалка выигрыша: показывается после остановки колеса -->
+  <div class="win-modal" id="win-modal" aria-hidden="true">
+    <div class="win-modal-backdrop" id="win-modal-backdrop"></div>
+    <div class="win-modal-inner">
+      <div class="win-svg-wrap">
+        <img
+          src="assets/Conteiner.svg"
+          alt="Вы выиграли"
+          class="win-svg-image"
+        />
+        <button class="win-banner-cta" type="button" id="win-banner-cta">
+          CLAIM BONUS
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js" defer></script>
 </body>
