@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Стартовый лендинг</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo">Мой Лендинг</div>
+      <nav class="nav">
+        <a href="#about" class="nav-link">О продукте</a>
+        <a href="#features" class="nav-link">Преимущества</a>
+        <a href="#cta" class="nav-link">Связаться</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Заголовок вашего лендинга</h1>
+          <p class="hero-subtitle">
+            Краткое описание продукта или сервиса. Здесь вы можете написать, чем вы полезны.
+          </p>
+          <button class="button" id="hero-cta">Начать</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">О продукте</h2>
+        <p class="section-text">
+          Здесь будет блок с описанием вашего продукта. Вы можете заменить этот текст на свой.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <h2 class="section-title">Преимущества</h2>
+        <div class="features">
+          <div class="feature-card">
+            <h3 class="feature-title">Преимущество 1</h3>
+            <p class="feature-text">Краткое описание первого преимущества.</p>
+          </div>
+          <div class="feature-card">
+            <h3 class="feature-title">Преимущество 2</h3>
+            <p class="feature-text">Краткое описание второго преимущества.</p>
+          </div>
+          <div class="feature-card">
+            <h3 class="feature-title">Преимущество 3</h3>
+            <p class="feature-text">Краткое описание третьего преимущества.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cta">
+      <div class="container cta">
+        <h2 class="section-title">Готовы начать?</h2>
+        <p class="section-text">
+          Добавьте сюда форму, ссылку на мессенджер или кнопку с действием.
+        </p>
+        <button class="button button-outline" id="cta-button">Оставить заявку</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <span>© <span id="year"></span> Мой Лендинг</span>
+      <a href="#top" class="footer-link">Наверх</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

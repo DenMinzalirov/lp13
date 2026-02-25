@@ -1,0 +1,26 @@
+# зависимости
+node_modules/
+npm-debug.log*
+pnpm-lock.yaml
+yarn.lock
+
+# сборки и артефакты
+dist/
+build/
+.cache/
+
+# ОС / редакторы
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# логи
+logs/
+*.log
+
+# env / секреты
+.env
+.env.*
+
