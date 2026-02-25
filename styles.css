@@ -407,7 +407,7 @@ button {
 .scratch-title-text {
   font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-weight: 800;
-  font-size: 70px;
+  font-size: 67px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #ffd65c;
@@ -421,7 +421,7 @@ button {
   }
 
   .scratch-title-text {
-    font-size: 23px;
+    font-size: 20px;
   }
 }
 
@@ -668,5 +668,40 @@ button {
     height: 48px;
     padding: 12px 24px;
     font-size: 18px;
+  }
+}
+
+.scratch-result {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.scratch-result-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+}
+
+.scratch-result-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.scratch-result-wrap .scratch-result-cta {
+  position: absolute;
+  left: 50%;
+  bottom: 11%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 480px) {
+  .scratch-result-wrap .scratch-result-cta {
+    width: 210px;
+    min-width: 210px;
+    height: 42px;
+    padding: 8px 16px;
+    font-size: 14px;
   }
 }

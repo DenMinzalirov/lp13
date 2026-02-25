@@ -121,17 +121,35 @@ document.addEventListener("DOMContentLoaded", () => {
   spinButton.addEventListener("click", spinToWin);
 
   // Анимация в месте карты: по клику карта заменяется на видео, проигрывается 1 раз
+  const scratchTitleWrap = document.getElementById("scratch-title-wrap");
+  const scratchGrid = document.getElementById("scratch-grid");
+  const scratchResult = document.getElementById("scratch-result");
+  let revealedScratchCount = 0;
+
   document.querySelectorAll(".scratch-card-wrap").forEach((wrap) => {
     const card = wrap.querySelector(".scratch-card");
     const video = wrap.querySelector(".scratch-card-video");
     if (!card || !video) return;
 
     card.addEventListener("click", () => {
+      if (card.disabled) return;
+
       card.classList.add("is-revealed");
       card.disabled = true;
       video.classList.add("is-playing");
       video.currentTime = 0;
       video.play();
+
+      revealedScratchCount += 1;
+
+      if (revealedScratchCount === 2 && scratchGrid && scratchResult) {
+        setTimeout(() => {
+          if (scratchTitleWrap) scratchTitleWrap.classList.add("hidden");
+          scratchGrid.classList.add("hidden");
+          scratchResult.classList.remove("hidden");
+          scratchResult.setAttribute("aria-hidden", "false");
+        }, 500);
+      }
     });
 
     video.addEventListener("ended", () => {
