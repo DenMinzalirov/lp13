@@ -5,7 +5,7 @@ pnpm-lock.yaml
 yarn.lock
 
 # сборки и артефакты
-dist/
+# dist/
 build/
 .cache/
 
