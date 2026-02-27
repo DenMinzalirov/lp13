@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  const IS_NO_CARDS =
+    typeof window !== "undefined" && window.IS_NO_CARDS === true;
+
   let isSpinning = false;
   let currentRotation = 0;
 
@@ -73,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const winBackdrop = document.getElementById("win-modal-backdrop");
       const wheelLayer = document.querySelector(".wheel-layer");
       const scratchSection = document.getElementById("scratch-section");
+      const registrationModal = document.getElementById("registration-modal");
 
       // Показываем модалку выигрыша с затемнённым фоном
       if (winModal) {
@@ -93,6 +97,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const handleCtaClick = () => {
         hideModal();
+
+        if (IS_NO_CARDS && registrationModal) {
+          registrationModal.classList.remove("hidden");
+          registrationModal.setAttribute("aria-hidden", "false");
+          return;
+        }
+
         if (wheelLayer) {
           wheelLayer.classList.add("hidden");
         }

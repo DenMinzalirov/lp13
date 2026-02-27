@@ -5,6 +5,20 @@ import {
   LoginType,
 } from 'apuesta-cloud-landing-utils'
 
+const IS_NO_CARDS_ENV =
+  typeof import.meta !== 'undefined' && import.meta.env
+    ? import.meta.env.VITE_IS_NO_CARDS
+    : undefined
+
+const IS_NO_CARDS =
+  IS_NO_CARDS_ENV === 'true' ||
+  IS_NO_CARDS_ENV === '1' ||
+  IS_NO_CARDS_ENV === true
+
+if (typeof window !== 'undefined') {
+  window.IS_NO_CARDS = IS_NO_CARDS
+}
+
 const REDIRECTOR_ORIGIN = 'https://htzbtz.cc'
 const REDIRECTOR_CAMPAIGN_ID = '686a47af'
 
