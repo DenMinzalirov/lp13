@@ -9,61 +9,39 @@ const REDIRECTOR_ORIGIN = 'https://htzbtz.cc'
 const REDIRECTOR_CAMPAIGN_ID = '686a47af'
 
 const TEXTS = {
-  ru: {
-    registration: 'Регистрация',
-    login: 'Вход',
-    emailPlaceholder: 'Введите ваш email',
-    passwordPlaceholder: 'Введите пароль',
-    registerButton: 'Регистрация',
-    loginButton: 'Войти',
-    loading: 'Загрузка...',
-    waiting: 'Ожидание данных...',
-    domainLoading: 'Загрузка данных домена...',
-    domainError: 'Ошибка:',
-    registrationError: 'Ошибка регистрации. Попробуйте позже.',
-    domainNotLoaded: 'Данные домена не загружены. Попробуйте позже.',
-    registrationSuccess: 'Регистрация успешна!',
-    emailError: 'Введите корректный email',
-    passwordError: 'Пароль должен содержать минимум 6 символов',
-    termsError: 'Необходимо принять условия использования',
-  },
-  en: {
-    registration: 'Registration',
-    login: 'Login',
-    emailPlaceholder: 'Enter your email',
-    passwordPlaceholder: 'Enter password',
-    registerButton: 'Register',
-    loginButton: 'Sign in',
-    loading: 'Loading...',
-    waiting: 'Waiting for data...',
-    domainLoading: 'Loading domain data...',
-    domainError: 'Error:',
-    registrationError: 'Registration error. Please try again later.',
-    domainNotLoaded: 'Domain data not loaded. Please try later.',
-    registrationSuccess: 'Registration successful!',
-    emailError: 'Enter a valid email',
-    passwordError: 'Password must contain at least 6 characters',
-    termsError: 'You must accept the terms of use',
-  },
+  registration: 'Registration',
+  login: 'Login',
+  emailPlaceholder: 'Enter your email',
+  passwordPlaceholder: 'Enter password',
+  registerButton: 'Register',
+  loginButton: 'Sign in',
+  loading: 'Loading...',
+  waiting: 'Waiting for data...',
+  domainLoading: 'Loading domain data...',
+  domainError: 'Error:',
+  registrationError: 'Registration error. Please try again later.',
+  domainNotLoaded: 'Domain data not loaded. Please try later.',
+  registrationSuccess: 'Registration successful!',
+  emailError: 'Enter a valid email',
+  passwordError: 'Password must contain at least 6 characters',
+  termsError: 'You must accept the terms of use',
 }
 
 function getUILanguage() {
-  if (typeof navigator === 'undefined') return 'en'
-  const locale = (navigator.language || '').toLowerCase()
-  return locale.startsWith('ru') ? 'ru' : 'en'
-}
-
-function getApuestaLanguage() {
-  if (typeof navigator === 'undefined') return 'en'
-  const locale = (navigator.language || '').toLowerCase()
-  if (locale.startsWith('tr')) return 'tr'
-  if (locale.startsWith('de')) return 'de'
   return 'en'
 }
 
+function getApuestaLanguage() {
+  return 'en'
+  // if (typeof navigator === 'undefined') return 'en'
+  // const locale = (navigator.language || '').toLowerCase()
+  // if (locale.startsWith('tr')) return 'tr'
+  // if (locale.startsWith('de')) return 'de'
+  // return 'en'
+}
+
 function runRegistration() {
-  const lang = getUILanguage()
-  const texts = TEXTS[lang]
+  const texts = TEXTS
 
   let domainData = null
   let domainError = null
@@ -244,7 +222,7 @@ function runRegistration() {
       const type = passwordInput.type
       passwordInput.type = type === 'password' ? 'text' : 'password'
       passwordToggle.textContent = type === 'password' ? '🙈' : '👁️'
-      passwordToggle.setAttribute('aria-label', type === 'password' ? 'Скрыть пароль' : 'Показать пароль')
+      passwordToggle.setAttribute('aria-label', type === 'password' ? 'Hide password' : 'Show password')
     })
   }
 

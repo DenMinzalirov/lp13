@@ -125,14 +125,16 @@
     <div class="registration-modal-backdrop" id="registration-modal-backdrop"></div>
     <div class="registration-modal-card">
       <div class="registration-modal-tabs">
-        <button type="button" class="registration-tab registration-tab--active" data-tab="signup">Регистрация</button>
-        <button type="button" class="registration-tab" data-tab="login">Вход</button>
+        <button type="button" class="registration-tab registration-tab--active" data-tab="signup">Sign up</button>
+        <button type="button" class="registration-tab" data-tab="login">Log in</button>
       </div>
       <div class="registration-modal-bonus">
         <div class="registration-modal-bonus-icon">🎁</div>
         <div class="registration-modal-bonus-text">
-          <p class="registration-modal-bonus-title">Hertzbet</p>
-          <p class="registration-modal-bonus-desc">200% up to 1000 EUR + 150 FS</p>
+          <p class="registration-modal-bonus-title">Welcome pack</p>
+          <p class="registration-modal-bonus-desc">
+            555% до €5,000 + 99 no-wager FS и 150 FS
+          </p>
         </div>
         <span class="registration-modal-bonus-badge">BONUS</span>
       </div>
@@ -141,28 +143,28 @@
       <form class="registration-form" id="registration-form" novalidate>
         <div class="registration-field">
           <label class="registration-field-label" for="reg-email">Email</label>
-          <input type="email" id="reg-email" name="email" class="registration-input" placeholder="Введите ваш email" autocomplete="email" />
+          <input type="email" id="reg-email" name="email" class="registration-input" placeholder="Enter your email" autocomplete="email" />
           <span class="registration-field-error" id="reg-email-error"></span>
         </div>
         <div class="registration-field">
-          <label class="registration-field-label" for="reg-password">Пароль</label>
+          <label class="registration-field-label" for="reg-password">Password</label>
           <div class="registration-password-wrap">
-            <input type="password" id="reg-password" name="password" class="registration-input" placeholder="Введите пароль" autocomplete="new-password" />
-            <button type="button" class="registration-password-toggle" id="reg-password-toggle" aria-label="Показать пароль">👁️</button>
+            <input type="password" id="reg-password" name="password" class="registration-input" placeholder="Enter password" autocomplete="new-password" />
+            <button type="button" class="registration-password-toggle" id="reg-password-toggle" aria-label="Show password">👁️</button>
           </div>
           <span class="registration-field-error" id="reg-password-error"></span>
         </div>
         <label class="registration-checkbox">
           <input type="checkbox" name="newsUpdates" id="reg-news" checked />
-          <span>Я хочу получать информацию о новостях и предложениях от казино и выбранных партнеров</span>
+          <span>I want to receive information about news and offers from the casino and selected partners</span>
         </label>
         <label class="registration-checkbox">
           <input type="checkbox" name="termsAccepted" id="reg-terms" required />
-          <span>Мне исполнилось 18 лет и я принимаю <a href="#" class="registration-link">Условия использования</a> и <a href="#" class="registration-link">Политику конфиденциальности</a></span>
+          <span>I am 18 years old and I accept the <a href="#" class="registration-link">Terms of Use</a> and the <a href="#" class="registration-link">Privacy Policy</a></span>
         </label>
         <span class="registration-field-error" id="reg-terms-error"></span>
         <button type="submit" class="registration-submit" id="registration-submit-btn" disabled>
-          Загрузка данных домена...
+          Loading domain data...
         </button>
       </form>
     </div>
