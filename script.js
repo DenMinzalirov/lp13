@@ -168,5 +168,19 @@ document.addEventListener("DOMContentLoaded", () => {
       video.classList.add("is-playing"); // остаёмся видимым (последний кадр)
     });
   });
+
+  const registrationBackdrop = document.getElementById(
+    "registration-modal-backdrop",
+  );
+
+  if (registrationBackdrop) {
+    registrationBackdrop.addEventListener(
+      "click",
+      (event) => {
+        event.stopImmediatePropagation();
+      },
+      true,
+    );
+  }
 });
 
